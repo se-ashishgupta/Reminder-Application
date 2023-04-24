@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <nav>
-      <h2>Remainder App..</h2>
+      <h2>Reminder App..</h2>
 
       <article>
         {isAuthenticated ? (
