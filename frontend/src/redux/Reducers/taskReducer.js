@@ -27,7 +27,7 @@ export const myTasksReducer = createReducer(initialState, {
   updateTaskRequest: (state) => {
     state.loading = true;
   },
-  updateTYaskSuccess: (state, action) => {
+  updateTaskSuccess: (state, action) => {
     state.loading = false;
     state.message = action.payload;
   },

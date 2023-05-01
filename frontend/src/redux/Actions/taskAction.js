@@ -64,7 +64,7 @@ export const deleteTask = (id) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({
-      type: "newTdeleteTaskFailureaskFailure",
+      type: "deleteTaskFailure",
       payload: error.response.data.message,
     });
   }
@@ -82,12 +82,12 @@ export const updateTask = (id) => async (dispatch) => {
       }
     );
     dispatch({
-      type: "updateTYaskSuccess",
+      type: "updateTaskSuccess",
       payload: data.message,
     });
   } catch (error) {
     dispatch({
-      type: "updateTYaskFailure",
+      type: "updateTaskFailure",
       payload: error.response.data.message,
     });
   }
