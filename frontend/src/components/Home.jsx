@@ -9,6 +9,7 @@ import TodoItem from "./TodoItem";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
+import Loader from "./Loader";
 const Home = () => {
   const [title, setTitle] = useState("");
 
@@ -38,7 +39,9 @@ const Home = () => {
   }, [dispatch, message]);
 
   if (!isAuthenticated) return <Navigate to={"/login"} />;
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className="container">
       <div className="login">
         <section>

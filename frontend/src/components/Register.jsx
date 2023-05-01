@@ -1,9 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import axios from "axios";
-import { server } from "../index";
-import toast from "react-hot-toast";
-import { Context } from "../index";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../redux/Actions/userAction";
 

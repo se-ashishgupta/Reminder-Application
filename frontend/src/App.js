@@ -6,7 +6,6 @@ import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { Toaster, toast } from "react-hot-toast";
-import { Context, server } from "./index";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./redux/Actions/userAction";
 import Loader from "./components/Loader";
@@ -14,17 +13,13 @@ import Loader from "./components/Loader";
 const App = () => {
   const dispatch = useDispatch();
   const { user, message, error, loading } = useSelector((state) => state.user);
-  const { message: taskMessage } = useSelector((state) => state.myTasks);
 
   useEffect(() => {
     if (message) {
       toast.success(message);
       dispatch({ type: "clearMessage" });
     }
-    if (taskMessage) {
-      toast.success(taskMessage);
-      dispatch({ type: "clearMessage" });
-    }
+
     if (error) {
       toast.error(error);
       dispatch({ type: "clearErrors" });
