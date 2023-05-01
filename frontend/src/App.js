@@ -14,15 +14,11 @@ import Loader from "./components/Loader";
 const App = () => {
   const dispatch = useDispatch();
   const { user, message, error, loading } = useSelector((state) => state.user);
-  const { message: taskMessage } = useSelector((state) => state.myTasks);
+  
 
   useEffect(() => {
     if (message) {
       toast.success(message);
-      dispatch({ type: "clearMessage" });
-    }
-    if (taskMessage) {
-      toast.success(taskMessage);
       dispatch({ type: "clearMessage" });
     }
     if (error) {
