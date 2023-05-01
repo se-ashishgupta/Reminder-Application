@@ -13,20 +13,12 @@ import Loader from "./components/Loader";
 const App = () => {
   const dispatch = useDispatch();
   const { user, message, error, loading } = useSelector((state) => state.user);
-<<<<<<< HEAD
-=======
-  
->>>>>>> 1049286ff6c41e05fe4f84cb13ce516969235519
-
   useEffect(() => {
     if (message) {
       toast.success(message);
       dispatch({ type: "clearMessage" });
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 1049286ff6c41e05fe4f84cb13ce516969235519
     if (error) {
       toast.error(error);
       dispatch({ type: "clearErrors" });
